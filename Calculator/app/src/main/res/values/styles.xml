@@ -24,13 +24,13 @@
         <item name="android:background">#000000</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
-        <item name="android:textSize">60sp</item>
+        <item name="android:textSize">40sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAlignment" tools:targetApi="17">textEnd</item>
         <item name="android:gravity">end</item>
     </style>
 
-    <style name="FunctionButtonStyle" parent="Widget.AppCompat.Button">
+    <style name="uarkStyle" parent="Widget.AppCompat.Button">
         <item name="colorButtonNormal">#9D2235</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:fontFamily" tools:targetApi="16">sans-serif-condensed</item>
