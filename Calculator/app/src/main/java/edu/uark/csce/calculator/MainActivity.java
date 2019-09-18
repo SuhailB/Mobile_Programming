@@ -16,7 +16,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     private TextView CalDisplay;
     private static final String DIGITS = "0123456789.";
-    DecimalFormat df = new DecimalFormat("0.######E0");
+    DecimalFormat df1 = new DecimalFormat("@###########");
+    DecimalFormat df2 = new DecimalFormat("0.######E0");
     private Boolean userHasPressedDigit = false;
 
     private double newOperand;
@@ -110,7 +111,11 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 CalDisplay.setText(CalDisplay.getText().subSequence(0,CalDisplay.getText().length()-1));
             else {
                 performOperation(buttonPressed);
-                CalDisplay.setText(df.format(getResult()));
+                
+                if(Math.abs(getResult())>999999999 || Math.abs(getResult())<0.000001 && getResult()!=0)
+                    CalDisplay.setText(df2.format(getResult()));
+                else
+                    CalDisplay.setText(df1.format(getResult()));
                 userHasPressedDigit = false;
 //                Log.e("B Pressed",buttonPressed);
             }
@@ -123,7 +128,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 userHasPressedDigit = false;
             }
             performOperation(buttonPressed);
-            CalDisplay.setText(df.format(getResult()));
+            if(Math.abs(getResult())>999999999 || Math.abs(getResult())<0.00000001 && getResult()!=0)
+                CalDisplay.setText(df2.format(getResult()));
+            else
+                CalDisplay.setText(df1.format(getResult()));
         }
     }
 
